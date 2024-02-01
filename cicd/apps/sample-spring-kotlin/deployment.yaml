@@ -1,30 +1,36 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: sample-spring-kotlin
+  #name: sample-spring-kotlin
+  name: sonarqube-example-git
 spec:
   type: ClusterIP
   selector:
-    app: sample-spring-kotlin
+    #app: sample-spring-kotli
+    app: sonarqube-example-git
   ports:
   - port: 8080
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sample-spring-kotlin
+  #name: sample-spring-kotlin
+  name: sonarqube-example-git
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: sample-spring-kotlin
+      #app: sample-spring-kotlin
+      name: sonarqube-example-git
   template:
     metadata:
       labels:
-        app: sample-spring-kotlin
+        #app: sample-spring-kotlin
+        name: sonarqube-example-git
     spec:
       containers:
-      - name: sample-spring-kotlin
+      #- name: sample-spring-kotlin
+      - name: sonarqube-example-git
         #image: image-registry.openshift-image-registry.svc:5000/piotr-cicd/sample-spring-kotlin:1.4.0
         image: image-registry.openshift-image-registry.svc:5000/demo/sonarqube-example-git
         ports:
