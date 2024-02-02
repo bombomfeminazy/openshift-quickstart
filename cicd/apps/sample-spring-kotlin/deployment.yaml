@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
       #- name: sample-spring-kotlin
-      - name: sonarqube-example-git
+      - name: argo
         #image: image-registry.openshift-image-registry.svc:5000/piotr-cicd/sample-spring-kotlin:1.4.0
         image: image-registry.openshift-image-registry.svc:5000/demo/sonarqube-example-git:1
         ports:
